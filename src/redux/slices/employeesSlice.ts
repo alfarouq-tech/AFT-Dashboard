@@ -46,10 +46,6 @@ export const initialState: InitState = {
   ],
 };
 
-const filterEmployeesSlice = (state: InitState, action: PayloadAction<Employee>) => {
-  return state.employees.filter((employee) => employee.id === action.payload.id)
-};
-
 const employeesSlice = createSlice({
   name: 'employees',
   initialState,

@@ -4,8 +4,12 @@
 
 .cards .card .card-header,
 .cards svg {
-  color: #e3cece;
+  color: #fff;
   font-size: 25px;
+}
+
+.cards .card .increment-percent svg {
+  color: rgb(180, 180, 180);
 }
 
 .cards .card .card-header h3 {
@@ -66,7 +70,7 @@
   outline: 0;
 }
 
-.base-table table .actions .btn {
+.base-table table .actions button.btn {
   transition: 0.5s;
 }
 
