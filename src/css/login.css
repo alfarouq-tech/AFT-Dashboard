@@ -1,0 +1,50 @@
+.login .form-title {
+  font-size: 50px;
+  margin: 10px 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login .form-control {
+  background-color: transparent;
+  border: none;
+}
+
+.login label {
+  color: white;
+}
+
+.login input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+  filter: drop-shadow(0 0 10px #ffffff30);
+}
+
+.login .error {
+  color: #eed754;
+  margin-top: 5px;
+}
+
+.login .submit {
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px 40px;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+  margin: 20px 12px;
+}
+
+.login .submit:hover {
+  background-color: #fe9a02;
+  border-color: #fe9a02;
+  color: rgb(11, 10, 10);
+}
+
+.login .links a:hover {
+  color: rgb(13, 13, 136);
+}
