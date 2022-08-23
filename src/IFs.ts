@@ -1,3 +1,8 @@
+export interface AuthFields {
+  email: string,
+  password: string,
+}
+
 export interface Employee {
   id: number;
   name: string;

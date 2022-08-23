@@ -5,6 +5,5 @@ export default (userId: string) => {
   onValue(employeesRef, (snapshot) => {
     const employees = snapshot.val();
     console.log(employees);
-    
   });
 };

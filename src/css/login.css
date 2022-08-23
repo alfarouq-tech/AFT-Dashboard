@@ -10,7 +10,7 @@
 }
 
 .login label {
-  color: white;
+  color: #fff;
 }
 
 .login input {
@@ -28,11 +28,11 @@
 
 .login .submit {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #fff;
   border-radius: 5px;
   padding: 10px 40px;
   background-color: transparent;
-  color: white;
+  color: #fff;
   font-size: 18px;
   font-weight: 600;
   transition: all 0.2s ease-out;
@@ -43,6 +43,13 @@
   background-color: #fe9a02;
   border-color: #fe9a02;
   color: rgb(11, 10, 10);
+}
+
+.login .submit:disabled {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  cursor: not-allowed;
 }
 
 .login .links a:hover {

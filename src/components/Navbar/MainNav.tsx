@@ -1,7 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+// Redux & Auth
+import { useAppDispatch } from "../../redux/hooks";
+import logOut from "../../redux/auth/logOut";
 // Router
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // Icons
 import { AiFillDashboard, AiFillProject } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
@@ -16,6 +19,13 @@ const MainNav = React.forwardRef(
     },
     ref: React.Ref<HTMLUListElement>
   ) => {
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const logout = () => {
+      dispatch(logOut());
+      navigate("/login", { replace: true });
+    }
+  
     return (
       <ul
         className={`nav nav-pills flex-column fs-6 mt-5 align-self-center ${props.hiddenClass}`}
@@ -81,10 +91,10 @@ const MainNav = React.forwardRef(
             role="button"
             tabIndex={0}
           >
-            <Link to="/login" className="d-flex align-items-center">
+            <button type="button" className="btn d-flex align-items-center" onClick={logout}>
               <BiLogOut />
               Log-Out
-            </Link>
+            </button>
           </div>
         </li>
       </ul>

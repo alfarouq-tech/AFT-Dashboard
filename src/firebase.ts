@@ -1,17 +1,33 @@
 import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+	signOut
+} from "firebase/auth";
 import { getDatabase, ref, onValue, set } from "firebase/database";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyBQwir-YAaLHfWiYMnuTIhuV4JTAvaE678",
-	authDomain: "alfcdashboard.firebaseapp.com",
-	projectId: "alfcdashboard",
-	storageBucket: "alfcdashboard.appspot.com",
-	messagingSenderId: "796568236586",
-	appId: "1:796568236586:web:16f16b427aaba46a758953",
-	databaseURL: "https://alfcdashboard-default-rtdb.firebaseio.com",
+  apiKey: "AIzaSyBO7r3HflZedL7KIAXgIPCLNhN0E2kILhQ",
+  authDomain: "aft-dashboard.firebaseapp.com",
+  databaseURL: "https://aft-dashboard-default-rtdb.firebaseio.com",
+  projectId: "aft-dashboard",
+  storageBucket: "aft-dashboard.appspot.com",
+  messagingSenderId: "538590561923",
+  appId: "1:538590561923:web:7ec93c222ecc7094b0bdb6"
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 const DB = getDatabase(app);
 
-export {DB as default, ref, onValue, set};
+export {
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+	signOut,
+  DB as default,
+  ref,
+  onValue,
+  set,
+};

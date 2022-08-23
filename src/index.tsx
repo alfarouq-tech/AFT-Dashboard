@@ -1,46 +1,24 @@
 // React
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 // CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Redux
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistedStore } from "./redux/store";
 // App.jsx
 import App from "./App";
-// Pages
-import Dashboard from "./pages/Dashboard";
-import Projects from "./pages/Projects";
-import OurClients from "./pages/OurClients";
-import Profile from "./pages/Profile";
-import LogIn from "./pages/LogIn";
-import ScrollToTop from "./components/ScrollToTopOnMount";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
-      <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route path="" element={<Dashboard />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="our-clients" element={<OurClients />} />
-            <Route path="profile" element={<Profile />} />
-            <Route
-              path="*"
-              element={
-                <main style={{ padding: "1rem" }}>
-                  <p>There's nothing here!</p>
-                </main>
-              }
-            />
-          </Route>
-          <Route path="/login" element={<LogIn />} />
-        </Routes>
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate persistor={persistedStore}>
+        <App />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

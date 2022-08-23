@@ -1,4 +1,4 @@
-import React, { useRef, memo, useEffect } from "react";
+import React, { useRef, memo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Icons
 import { BiWorld } from "react-icons/bi";
