@@ -6,13 +6,11 @@ import {
 interface InitState {
   user: unknown;
   errorMessage: string;
-  isLoggedIn: boolean;
 }
 
 const initialState: InitState = {
   user: null,
   errorMessage: "",
-  isLoggedIn: false,
 };
 
 const authSlice = createSlice({
@@ -28,12 +26,10 @@ const authSlice = createSlice({
       } else {
         state.errorMessage = "";
         state.user = action.payload.user;
-        state.isLoggedIn = true;
       }
     },
     LOG_OUT: (state) => {
       state.user = null;
-      state.isLoggedIn = false;
     },
   },
 });
