@@ -45,6 +45,10 @@
   color: rgb(11, 10, 10);
 }
 
+.login .submit:focus-visible {
+  border-color: #000;
+}
+
 .login .submit:disabled {
   background-color: transparent;
   color: #fff;
