@@ -38,6 +38,8 @@ const LogInForm = () => {
       return setLoginErrorMessage("Email is wrong");
     if (errorMessage === "Firebase: Error (auth/wrong-password).")
       return setLoginErrorMessage("Password is wrong");
+    if (errorMessage === "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests).")
+    return setLoginErrorMessage("Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.");
   }, [errorMessage]);
 
   return (
@@ -62,7 +64,8 @@ const LogInForm = () => {
               className="submit"
               disabled={
                 props.errors.email ||
-                props.errors.password
+                props.errors.password ||
+                loginErrorMessage
                   ? true
                   : false
               }
