@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // React Router
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 // Interfaces
 import { AuthFields } from "../IFs";
 // Redux & Auth
@@ -70,8 +70,8 @@ const LogInForm = () => {
               Sign In
             </button>
             <div className="links px-3 d-flex flex-column justify-content-center align-items-start gap-2 mt-3 text-white">
-              <NavLink to="/sign-up">Don't have an account</NavLink>
-              <NavLink to="/reset-password">Reset Password</NavLink>
+              <Link to="/sign-up">Don't have an account</Link>
+              <Link to="/reset-password">Reset Password</Link>
             </div>
           </form>
         )}
