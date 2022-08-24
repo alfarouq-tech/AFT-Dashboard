@@ -17,6 +17,17 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    SIGN_IN: (
+      state,
+      action: PayloadAction<{ user: any; errorMessage: string }>
+    ) => {
+      if (action.payload.errorMessage.length) {
+        state.errorMessage = action.payload.errorMessage;
+      } else {
+        state.errorMessage = "";
+        state.user = action.payload.user;
+      }
+    },
     LOG_IN: (
       state,
       action: PayloadAction<{ user: any; errorMessage: string }>
@@ -34,5 +45,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { LOG_IN, LOG_OUT } = authSlice.actions;
+export const { SIGN_IN, LOG_IN, LOG_OUT } = authSlice.actions;
 export default authSlice.reducer;

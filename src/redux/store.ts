@@ -9,16 +9,23 @@ import persistStore from "redux-persist/es/persistStore";
 // API
 import fetchEmployees from "./api/fetchEmployees";
 
-const reducers = combineReducers({
-  auth: authReducer,
-  employees: employeesReducer,
-  projects: projectsReducer,
-});
-
 const persistConfig = {
   key: "root",
   storage,
+  blacklist: ["auth"],
 };
+
+const authPersist = {
+  key: "auth",
+  storage,
+  blacklist: ["errorMessage"],
+}
+
+const reducers = combineReducers({
+  auth: persistReducer(authPersist, authReducer),
+  employees: employeesReducer,
+  projects: projectsReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
