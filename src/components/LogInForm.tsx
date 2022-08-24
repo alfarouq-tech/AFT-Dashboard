@@ -15,6 +15,7 @@ import BaseInput from "./BaseInput";
 const LogInForm = () => {
   const dispatch = useAppDispatch();
   const errorMessage = useAppSelector((state) => state.auth.errorMessage);
+  const [passwordFieldType, setPasswordFieldType] = useState("password");
   const [loginErrorMessage, setLoginErrorMessage] = useState("");
 
   const resetLoginErrorMessage = () => setLoginErrorMessage("");
@@ -32,6 +33,8 @@ const LogInForm = () => {
   });
 
   const onSubmit = (values: AuthFields) => dispatch(logInWithEmailAndPassword(values.email, values.password));
+
+  const togglePassword = () => passwordFieldType === "password" ? setPasswordFieldType("text") : setPasswordFieldType("password");
 
   useEffect(() => {
     if (errorMessage === "Firebase: Error (auth/user-not-found).")
@@ -56,7 +59,7 @@ const LogInForm = () => {
               <BaseInput type="text" label="Email" name="email" />
             </div>
             <div onClick={resetLoginErrorMessage}>
-              <BaseInput type="password" label="Password" name="password" />
+              <BaseInput type={passwordFieldType} label="Password" name="password" togglePassword={togglePassword} />
             </div>
             <span className="error d-block mt-1 ms-3">{loginErrorMessage}</span>
             <button
