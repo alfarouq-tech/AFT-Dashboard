@@ -13,7 +13,7 @@ const SignUp = ({ auth }: { auth: boolean }) => {
           <img
             src={SignUpImage}
             alt="Business Analytics Image"
-            className="img-fluid"
+            className="img-fluid d-block mx-auto"
             loading="lazy"
           />
         </div>
