@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // React Router
 import { Navigate, Outlet } from "react-router-dom";
-// Cookies
-import Cookies from "js-cookie";
 // Components
 import SideNavbar from "./SideNavbar";
 import Header from "./Header";

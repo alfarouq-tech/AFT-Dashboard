@@ -1,3 +1,8 @@
+.login .container,
+.login .row {
+  min-height: 100vh;
+}
+
 .login .form-title {
   font-size: 50px;
   margin: 10px 12px;

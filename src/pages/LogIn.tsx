@@ -14,6 +14,7 @@ const LogIn = ({ auth } : { auth : boolean }) => {
             src={businessAnalytics}
             alt="Business Analytics Image"
             className="img-fluid"
+            loading="lazy"
           />
         </div>
         <LogInForm />

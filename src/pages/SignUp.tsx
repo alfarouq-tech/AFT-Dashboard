@@ -14,6 +14,7 @@ const SignUp = ({ auth }: { auth: boolean }) => {
             src={SignUpImage}
             alt="Business Analytics Image"
             className="img-fluid"
+            loading="lazy"
           />
         </div>
         <SignUpForm />
