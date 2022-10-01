@@ -58,6 +58,10 @@ a {
   text-decoration: none;
 }
 
+[role=button] {
+  cursor: pointer;
+}
+
 /* Utilities */
 .link {
   text-decoration: underline;

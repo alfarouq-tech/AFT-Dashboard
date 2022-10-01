@@ -6,7 +6,7 @@ interface Props {
   name: string;
   label: String;
   type: String;
-  togglePassword?: () => void,
+  togglePassword?: () => void;
 }
 
 const BaseInput = ({ name, label, type, togglePassword }: Props) => {
@@ -17,18 +17,24 @@ const BaseInput = ({ name, label, type, togglePassword }: Props) => {
       </label>
       <div className="position-relative w-75">
         <Field type={type} id={name} name={name} className="w-100" />
-        {
-          (name === "password" || name === "confirm_password") && (
-            <>
-            {
-              type === "text" && <AiFillEye className="position-absolute top-50 end-0 translate-middle fs-5" onClick={togglePassword} />
-            }
-            {
-              type === "password" && <AiFillEyeInvisible className="position-absolute top-50 end-0 translate-middle fs-5" onClick={togglePassword} />
-            }
-            </>
-          )
-        }
+        {(name === "password" || name === "confirm_password") && (
+          <>
+            {type === "text" && (
+              <AiFillEye
+                role="button"
+                className="position-absolute top-50 end-0 translate-middle fs-5 cursor-pointer"
+                onClick={togglePassword}
+              />
+            )}
+            {type === "password" && (
+              <AiFillEyeInvisible
+                role="button"
+                className="position-absolute top-50 end-0 translate-middle fs-5 cursor-pointer"
+                onClick={togglePassword}
+              />
+            )}
+          </>
+        )}
       </div>
       <ErrorMessage component="span" className="error" name={name} />
     </div>
