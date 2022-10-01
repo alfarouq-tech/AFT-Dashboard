@@ -14,6 +14,7 @@ import OurClients from "./pages/OurClients";
 import Profile from "./pages/Profile";
 import LogIn from "./pages/LogIn";
 import Cookies from "js-cookie";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   const user = useAppSelector((state) => state.auth.user);
@@ -49,6 +50,7 @@ const App = () => {
           />
         </Route>
         <Route path="/login" element={<LogIn auth={auth} />} />
+        <Route path="/sign-up" element={<SignUp auth={auth} />} />
       </Routes>
     </BrowserRouter>
   );

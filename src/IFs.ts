@@ -1,6 +1,7 @@
 export interface AuthFields {
   email: string,
   password: string,
+  confirm_password?: string,
 }
 
 export interface Employee {
