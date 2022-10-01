@@ -16,11 +16,8 @@ font-family: 'Roboto Slab', serif;
 /* Start Global */
 html,
 body,
-#root,
-.container,
-.row {
+#root {
   padding: 0;
-  margin: 0;
   font-family:
     Roboto,
     -apple-system,
@@ -34,7 +31,6 @@ body,
     Helvetica Neue,
     sans-serif;
   overflow-x: hidden;
-  height: 100vh;
 }
 
 h1,

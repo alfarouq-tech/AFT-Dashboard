@@ -23,7 +23,7 @@ const BaseTable = ({
   all,
   colSpan,
 }: Props) => (
-  <section className="base-table mt-4">
+  <section className="base-table mt-5">
     <h2 className="text-muted mb-3 mt-4 pb-2 fs-4">{tableTitle}</h2>
     {
       !projects.length && !employees.length ? (
