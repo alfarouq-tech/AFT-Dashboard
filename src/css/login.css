@@ -31,6 +31,41 @@
   margin-top: 5px;
 }
 
+.login .or-separator {
+  position: relative;
+}
+
+.login .or-separator::after {
+  background: #fff;
+  content: "";
+  display: block;
+  width: 35%;
+  height: 1px;
+  border-radius: 10px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-120%);
+}
+
+.login .or-separator::before {
+  background: #fff;
+  content: "";
+  display: block;
+  width: 35%;
+  height: 1px;
+  border-radius: 10px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(20%);
+}
+
+.login .singing-icon {
+  height: 30px;
+  width: 30px;
+}
+
 .login .submit {
   outline: none;
   border: 1px solid #fff;

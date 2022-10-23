@@ -11,6 +11,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 // Components
 import BaseInput from "./BaseInput";
+import BaseAuthWith from "./BaseAuthWith";
 
 const LogInForm = memo(() => {
   const dispatch = useAppDispatch();
@@ -106,6 +107,7 @@ const LogInForm = memo(() => {
             >
               Sign Up
             </button>
+            <BaseAuthWith title="Sign Up With:"/>
             <div className="links px-3 d-flex flex-column justify-content-center align-items-start gap-2 mt-3 text-white">
               <Link to="/login">Already have an account</Link>
             </div>
