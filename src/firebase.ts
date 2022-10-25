@@ -5,7 +5,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
-	signOut
+	signOut,
+  GithubAuthProvider
 } from "firebase/auth";
 import { getDatabase, ref, onValue, set } from "firebase/database";
 
@@ -22,13 +23,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const DB = getDatabase(app);
 
 export {
   auth,
   createUserWithEmailAndPassword,
-  GoogleAuthProvider,
   googleProvider,
+  githubProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
 	signOut,

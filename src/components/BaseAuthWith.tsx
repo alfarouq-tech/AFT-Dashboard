@@ -5,15 +5,16 @@ import authWithGoogle from "../redux/auth/authWithGoogle";
 // Images
 import googleIcon from "../images/google.svg";
 import githubIcon from "../images/github.svg";
+import authWithGithub from "../redux/auth/authWithGithub";
 
-const BaseAuthWith = ({ title } : {title: string}) => {
+const BaseAuthWith = ({ title }: { title: string }) => {
   const dispatch = useAppDispatch();
   return (
     <>
       <span className="text-white text-center fs-4 d-block or-separator">
         Or
       </span>
-      <h2 className="text-white fs-5 my-4 px-3">{ title }</h2>
+      <h2 className="text-white fs-5 my-4 px-3">{title}</h2>
       <div className="d-flex align-items-center gap-3 mt-3 px-3 w-50">
         <button
           type="button"
@@ -27,7 +28,11 @@ const BaseAuthWith = ({ title } : {title: string}) => {
             className="singing-icon"
           />
         </button>
-        <button type="button" className="btn">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => dispatch(authWithGithub())}
+        >
           <img
             src={githubIcon}
             alt="github singing icon"

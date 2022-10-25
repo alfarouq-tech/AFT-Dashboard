@@ -29,6 +29,7 @@ const App = () => {
 
   useEffect(() => {
     setAuth(() => user ? true : false);
+    console.log(user)
   }, [user]);
 
   if (loading) {
