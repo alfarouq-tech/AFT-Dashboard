@@ -1,36 +1,39 @@
 import React, { useEffect, useState } from "react";
 // Redux
-import { useAppSelector } from "./redux/hooks";
+import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import loggedIn from "./redux/auth/loggedIn";
 // CSS
 import "./css/index.css";
 // React Router
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Components
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import Loading from "./components/Loading";
 // Pages
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import OurClients from "./pages/OurClients";
 import Profile from "./pages/Profile";
 import LogIn from "./pages/LogIn";
-import Cookies from "js-cookie";
 import SignUp from "./pages/SignUp";
 
 const App = () => {
   const user = useAppSelector((state) => state.auth.user);
-  const [auth, setAuth] = useState<boolean>(Cookies.get("auth") ? true : false);
+  const loading = useAppSelector((state) => state.auth.loading);
+  const dispatch = useAppDispatch();
+  const [auth, setAuth] = useState<boolean>(false);
 
-  const readCookies = () => {
-    const isLoggedIn = Cookies.get("auth");
-    
-    if (isLoggedIn && !auth) {
-      return setAuth(true);
-    } else if (user === null) {
-      return setAuth(false);
-    }
-  };
+  useEffect(() => {
+    dispatch(loggedIn());
+  }, []);
 
-  useEffect(() => readCookies(), [user]);
+  useEffect(() => {
+    setAuth(() => user ? true : false);
+  }, [user]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <BrowserRouter>

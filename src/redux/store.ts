@@ -12,28 +12,29 @@ import fetchEmployees from "./api/fetchEmployees";
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["auth"],
+  // blacklist: ["auth"],
 };
 
-const authPersist = {
-  key: "auth",
-  storage,
-  blacklist: ["errorMessage"],
-}
+// const authPersist = {
+//   key: "auth",
+//   storage,
+//   blacklist: ["errorMessage"],
+// }
 
 const reducers = combineReducers({
-  auth: persistReducer(authPersist, authReducer),
+  // auth: persistReducer(authPersist, authReducer),
+  auth: authReducer,
   employees: employeesReducer,
   projects: projectsReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+// const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: reducers,
 });
 
-export const persistedStore = persistStore(store);
+// export const persistedStore = persistStore(store);
 
 // fetchEmployees("8Qf4TBP63tbOA65qkKcndFRZ7vD2");
 export type RootState = ReturnType<typeof store.getState>;

@@ -4,6 +4,15 @@ export interface AuthFields {
   confirm_password?: string,
 }
 
+export interface User {
+  uid: string | undefined;
+  displayName: string | null | undefined;
+  email: string | null | undefined;
+  emailVerified: boolean | undefined;
+  phoneNumber: string | null | undefined;
+  photoURL: string | null | undefined ;
+}
+
 export interface Employee {
   id: number;
   name: string;

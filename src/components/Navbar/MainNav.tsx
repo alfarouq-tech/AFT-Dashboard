@@ -24,8 +24,8 @@ const MainNav = React.forwardRef(
     const logout = () => {
       dispatch(logOut());
       navigate("/login", { replace: true });
-    }
-  
+    };
+
     return (
       <ul
         className={`nav nav-pills flex-column fs-6 mt-5 align-self-center ${props.hiddenClass}`}
@@ -91,7 +91,11 @@ const MainNav = React.forwardRef(
             role="button"
             tabIndex={0}
           >
-            <button type="button" className="btn d-flex align-items-center" onClick={logout}>
+            <button
+              type="button"
+              className="btn d-flex align-items-center"
+              onClick={logout}
+            >
               <BiLogOut />
               Log-Out
             </button>

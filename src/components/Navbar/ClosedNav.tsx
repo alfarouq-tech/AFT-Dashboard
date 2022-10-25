@@ -1,6 +1,6 @@
 import React from "react";
 // React Router
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // Icons
 import { AiFillDashboard, AiFillProject } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
@@ -13,7 +13,11 @@ import logOut from "../../redux/auth/logOut";
 const ClosedNav = React.forwardRef(
   (props, ref: React.Ref<HTMLUListElement>) => {
     const dispatch = useAppDispatch();
-    const logout = () => dispatch(logOut());
+    const navigate = useNavigate();
+    const logout = () => {
+      dispatch(logOut());
+      navigate("/login", { replace: true });
+    }
 
     return (
       <ul className="nav flex-column closed-nav" ref={ref}>
