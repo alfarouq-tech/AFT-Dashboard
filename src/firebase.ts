@@ -3,10 +3,11 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
+  GithubAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
 	signOut,
-  GithubAuthProvider
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { getDatabase, ref, onValue, set } from "firebase/database";
 
@@ -34,6 +35,7 @@ export {
   signInWithPopup,
   signInWithEmailAndPassword,
 	signOut,
+  sendPasswordResetEmail,
   DB as default,
   ref,
   onValue,

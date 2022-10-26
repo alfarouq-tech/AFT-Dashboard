@@ -4,12 +4,14 @@ import { User } from "../../IFs";
 interface InitState {
   user: User | null;
   errorMessage: string;
+  resetEmailSentMessage: string;
   loading: boolean;
 }
 
 const initialState: InitState = {
   user:  null,
   errorMessage: "",
+  resetEmailSentMessage: "",
   loading: true,
 };
 
@@ -39,8 +41,11 @@ const authSlice = createSlice({
     LOADING: (state, action: PayloadAction<{ loading: boolean }>) => {
       state.loading = action.payload.loading;
     },
+    RESET_EMAIL_SENT: (state, action: PayloadAction<string>) => {
+      state.resetEmailSentMessage = action.payload;
+    },
   },
 });
 
-export const { SIGN_IN, LOG_IN, LOG_OUT, LOADING } = authSlice.actions;
+export const { SIGN_IN, LOG_IN, LOG_OUT, LOADING, RESET_EMAIL_SENT } = authSlice.actions;
 export default authSlice.reducer;

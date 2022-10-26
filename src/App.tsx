@@ -16,6 +16,7 @@ import OurClients from "./pages/OurClients";
 import Profile from "./pages/Profile";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
   const user = useAppSelector((state) => state.auth.user);
@@ -29,7 +30,6 @@ const App = () => {
 
   useEffect(() => {
     setAuth(() => user ? true : false);
-    console.log(user)
   }, [user]);
 
   if (loading) {
@@ -55,6 +55,7 @@ const App = () => {
         </Route>
         <Route path="/login" element={<LogIn auth={auth} />} />
         <Route path="/sign-up" element={<SignUp auth={auth} />} />
+        <Route path="/reset-password" element={<ResetPassword auth={auth} />} />
       </Routes>
     </BrowserRouter>
   );
