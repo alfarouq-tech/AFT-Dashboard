@@ -14,11 +14,11 @@ const BaseAuthWith = ({ title }: { title: string }) => {
       <span className="text-white text-center fs-4 d-block or-separator">
         Or
       </span>
-      <h2 className="text-white fs-5 my-4 px-3">{title}</h2>
+      <h2 className="text-white fs-5 my-4 px-3 main-font-family">{title}</h2>
       <div className="d-flex align-items-center gap-3 mt-3 px-3 w-50">
         <button
           type="button"
-          className="btn"
+          className="btn p-0"
           onClick={() => dispatch(authWithGoogle())}
         >
           <img
@@ -30,7 +30,7 @@ const BaseAuthWith = ({ title }: { title: string }) => {
         </button>
         <button
           type="button"
-          className="btn"
+          className="btn p-0"
           onClick={() => dispatch(authWithGithub())}
         >
           <img

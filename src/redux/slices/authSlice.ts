@@ -9,7 +9,7 @@ interface InitState {
 }
 
 const initialState: InitState = {
-  user:  null,
+  user: null,
   errorMessage: "",
   resetEmailSentMessage: "",
   loading: true,
@@ -19,7 +19,10 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    SIGN_IN: (state, action: PayloadAction<{user: User | null; errorMessage: string;}>) => {
+    SIGN_IN: (
+      state,
+      action: PayloadAction<{ user: User | null; errorMessage: string }>
+    ) => {
       if (action.payload.errorMessage.length) {
         state.errorMessage = action.payload.errorMessage;
       } else {
@@ -27,7 +30,10 @@ const authSlice = createSlice({
         state.user = action.payload.user;
       }
     },
-    LOG_IN: (state, action: PayloadAction<{user: User | null; errorMessage: string;}>) => {
+    LOG_IN: (
+      state,
+      action: PayloadAction<{ user: User | null; errorMessage: string }>
+    ) => {
       if (action.payload.errorMessage.length) {
         state.errorMessage = action.payload.errorMessage;
       } else {
@@ -38,6 +44,10 @@ const authSlice = createSlice({
     LOG_OUT: (state) => {
       state.user = null;
     },
+    CLEAR_ERROR_MESSAGE: (state) => {
+      state.errorMessage = "";
+      state.resetEmailSentMessage = "";
+    },
     LOADING: (state, action: PayloadAction<{ loading: boolean }>) => {
       state.loading = action.payload.loading;
     },
@@ -47,5 +57,12 @@ const authSlice = createSlice({
   },
 });
 
-export const { SIGN_IN, LOG_IN, LOG_OUT, LOADING, RESET_EMAIL_SENT } = authSlice.actions;
+export const {
+  SIGN_IN,
+  LOG_IN,
+  LOG_OUT,
+  CLEAR_ERROR_MESSAGE,
+  LOADING,
+  RESET_EMAIL_SENT,
+} = authSlice.actions;
 export default authSlice.reducer;

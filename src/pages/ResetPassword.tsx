@@ -9,7 +9,7 @@ const ResetPassword = ({ auth }: { auth: boolean }) => {
   return auth ? (
     <Navigate to="/" replace={true} />
   ) : (
-    <main className="login container-fluid px-0 ps-md-1">
+    <main className="auth container-fluid px-0 ps-md-1">
       <section className="row">
         <div className="d-none col-6 d-md-flex align-items-center">
           <img

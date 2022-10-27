@@ -1,24 +1,23 @@
-.login .container,
-.login .row {
+.auth .container,
+.auth .row {
   min-height: 100vh;
 }
 
-.login .form-title {
-  font-size: 50px;
-  margin: 10px 12px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.auth .form-title {
+  font-size: 50px !important;
+  padding-inline: 0.75rem;
 }
 
-.login .form-control {
+.auth .form-control {
   background-color: transparent;
   border: none;
 }
 
-.login label {
+.auth label {
   color: #fff;
 }
 
-.login input {
+.auth input {
   outline: none;
   border: none;
   border-radius: 5px;
@@ -26,16 +25,16 @@
   filter: drop-shadow(0 0 10px #ffffff30);
 }
 
-.login .error {
+.auth .error {
   color: #eed754;
   margin-top: 5px;
 }
 
-.login .or-separator {
+.auth .or-separator {
   position: relative;
 }
 
-.login .or-separator::after {
+.auth .or-separator::after {
   background: #fff;
   content: "";
   display: block;
@@ -48,7 +47,7 @@
   transform: translateX(-120%);
 }
 
-.login .or-separator::before {
+.auth .or-separator::before {
   background: #fff;
   content: "";
   display: block;
@@ -61,12 +60,12 @@
   transform: translateX(20%);
 }
 
-.login .singing-icon {
+.auth .singing-icon {
   height: 30px;
   width: 30px;
 }
 
-.login .submit {
+.auth .submit {
   outline: none;
   border: 1px solid #fff;
   border-radius: 5px;
@@ -79,23 +78,23 @@
   margin: 20px 12px;
 }
 
-.login .submit:hover {
+.auth .submit:hover {
   background-color: #fe9a02;
   border-color: #fe9a02;
   color: rgb(11, 10, 10);
 }
 
-.login .submit:focus-visible {
+.auth .submit:focus-visible {
   border-color: #000;
 }
 
-.login .submit:disabled {
+.auth .submit:disabled {
   background-color: transparent;
   color: #fff;
   border-color: #fff;
   cursor: not-allowed;
 }
 
-.login .links a:hover {
+.auth .links a:hover {
   color: rgb(13, 13, 136);
 }

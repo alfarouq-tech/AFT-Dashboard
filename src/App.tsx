@@ -14,7 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import OurClients from "./pages/OurClients";
 import Profile from "./pages/Profile";
-import LogIn from "./pages/LogIn";
+import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ResetPassword from "./pages/ResetPassword";
 
@@ -53,7 +53,7 @@ const App = () => {
             }
           />
         </Route>
-        <Route path="/login" element={<LogIn auth={auth} />} />
+        <Route path="/sign-in" element={<SignIn auth={auth} />} />
         <Route path="/sign-up" element={<SignUp auth={auth} />} />
         <Route path="/reset-password" element={<ResetPassword auth={auth} />} />
       </Routes>

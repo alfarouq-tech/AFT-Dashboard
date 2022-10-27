@@ -19,7 +19,7 @@ const ProtectedRoutes = ({ auth }: { auth: boolean }) => {
       </div>
     </div>
   ) : (
-    <Navigate to="/login" replace={true} />
+    <Navigate to="/sign-in" replace={true} />
   );
 };
 

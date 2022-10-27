@@ -15,7 +15,7 @@ const BaseInput = ({ name, label, type, togglePassword }: Props) => {
       <label className="mb-1" htmlFor={name}>
         {label}
       </label>
-      <div className="position-relative w-75">
+      <div className="position-relative w-75 w-sm-100">
         <Field type={type} id={name} name={name} className="w-100" />
         {(name === "password" || name === "confirm_password") && (
           <>

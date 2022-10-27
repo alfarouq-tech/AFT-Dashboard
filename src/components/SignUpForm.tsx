@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // React Router
 import { Link } from "react-router-dom";
 // Interfaces
@@ -13,7 +13,7 @@ import * as Yup from "yup";
 import BaseInput from "./BaseInput";
 import BaseAuthWith from "./BaseAuthWith";
 
-const LogInForm = memo(() => {
+const LogInForm = () => {
   const dispatch = useAppDispatch();
   const errorMessage = useAppSelector((state) => state.auth.errorMessage);
   const [signUpErrorMessage, setSignUpErrorMessage] = useState("");
@@ -58,19 +58,24 @@ const LogInForm = memo(() => {
       : setConfirmPasswordFieldType("password");
 
   useEffect(() => {
+    if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
+      return setSignUpErrorMessage("Email already in use. Please try to sign in or reset your password.");
+    }
     return setSignUpErrorMessage(errorMessage);
   }, [errorMessage]);
 
   return (
-    <div className="col-12 col-md-6 bg-primary pt-5 d-flex flex-column justify-content-center">
-      <h2 className="text-white form-title mb-4">Join Us Now!</h2>
+    <div className="col-12 col-md-6 bg-primary pt-md-5 d-flex flex-column justify-content-center">
+      <h1 className="text-white form-title fs-1 mb-4 main-font-family col-10 mx-auto col-md-12 text-break">
+        Join Us Now!
+      </h1>
       <Formik
         initialValues={initValues}
         validationSchema={validation}
         onSubmit={onSubmit}
       >
         {({ errors, handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="col-10 mx-auto col-md-12">
             <div onClick={resetSignUpErrorMessage}>
               <BaseInput type="text" label="Email" name="email" />
             </div>
@@ -107,7 +112,7 @@ const LogInForm = memo(() => {
             >
               Sign Up
             </button>
-            <BaseAuthWith title="Sign Up With:"/>
+            <BaseAuthWith title="Sign Up With:" />
             <div className="links px-3 d-flex flex-column justify-content-center align-items-start gap-2 mt-3 text-white">
               <Link to="/login">Already have an account</Link>
             </div>
@@ -116,6 +121,6 @@ const LogInForm = memo(() => {
       </Formik>
     </div>
   );
-});
+};
 
 export default LogInForm;
