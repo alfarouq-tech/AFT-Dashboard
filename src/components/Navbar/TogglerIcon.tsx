@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 interface Props {
@@ -9,24 +8,18 @@ interface Props {
 function TogglerIcon({ navbarToggle }: Props) {
   return (
     <>
-      <div
-        className="navbar-toggler"
+      <button
+        className="btn navbar-toggler"
         onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex={0}
       >
         <span className="navbar-toggler-icon" aria-hidden="true" />
-      </div>
-      <div
-        className="close-icon"
+      </button>
+      <button
+        className="btn close-icon"
         onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex={0}
       >
         <AiFillCloseCircle />
-      </div>
+      </button>
     </>
   );
 }

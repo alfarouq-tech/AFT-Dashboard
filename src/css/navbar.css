@@ -11,19 +11,25 @@ nav > ul {
 
 nav .navbar-toggler {
   display: none;
+  padding: 0;
 }
 
 nav .close-icon {
-  cursor: pointer;
-  left: 30px;
+  padding: 0;
+  position: absolute;
+  right: 30px;
   top: 13px;
   font-size: 22px;
   color: rgb(202, 199, 199);
 }
 
+nav .navbar-toggler:focus,
+nav .close-icon:focus {
+  box-shadow: none !important;
+}
+
 nav .navbar-logo span,
 nav .navbar-logo svg {
-  cursor: pointer;
   letter-spacing: 2px;
   color: #007bff;
   font-size: 25px;
@@ -36,13 +42,19 @@ nav .nav {
   transition: 0.2s;
 }
 
+nav .nav .nav-item .btn {
+  box-shadow: none !important;
+  border: 0;
+  padding: 0;
+  margin-left: 10px;
+}
+
 nav .nav .nav-item a,
-nav .nav .nav-item svg {
+nav .nav .nav-item svg,
+nav .nav .nav-item .btn span {
   font-size: 17px !important;
   font-weight: 400;
   color: #676b84 !important;
-  padding-bottom: 2px;
-  margin-right: 2px;
   transition: 0.5s;
 }
 
@@ -52,7 +64,8 @@ nav .nav .nav-item svg {
 }
 
 nav .nav .nav-item:hover a,
-nav .nav .nav-item:hover svg {
+nav .nav .nav-item:hover svg,
+nav .nav .nav-item:hover .btn span {
   color: rgba(0, 0, 0, 0.774) !important;
 }
 
@@ -68,7 +81,6 @@ nav.close .navbar-toggler {
   display: block;
   opacity: 1;
   visibility: visible;
-  outline: none;
   border: none;
   margin: 15px 0 0 0 !important;
   align-self: center;

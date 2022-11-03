@@ -17,6 +17,7 @@ import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ResetPassword from "./pages/ResetPassword";
+import Employees from "./pages/Employees";
 
 const App = () => {
   const user = useAppSelector((state) => state.auth.user);
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="" element={<Dashboard />} />
           <Route path="projects" element={<Projects />} />
           <Route path="our-clients" element={<OurClients />} />
+          <Route path="employees" element={<Employees />} />
           <Route path="profile" element={<Profile />} />
           <Route
             path="*"

@@ -1,4 +1,4 @@
-import React, { useRef, memo } from "react";
+import React, { useRef, memo, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Icons
 import { BiWorld } from "react-icons/bi";
@@ -6,18 +6,16 @@ import { BiWorld } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 // Components
 import TogglerIcon from "./Navbar/TogglerIcon";
-import ClosedNav from "./Navbar/ClosedNav";
-import MainNav from "./Navbar/MainNav";
+import MainNavItems from "./Navbar/MainNavItems";
 
 function SideNavbar() {
-  const navbarRef = useRef<HTMLUListElement>(null);
-  const mainNavRef = useRef<HTMLUListElement>(null);
-  const closedNavRef = useRef<HTMLUListElement>(null);
+  const navbarContainerRef = useRef<HTMLUListElement>(null);
+  const [navClosed, setNavClosed] = useState(true);
   const navigate = useNavigate();
 
   // Toggle Navbar
   const navbarToggle = () => {
-    const navbar = navbarRef.current;
+    const navbar = navbarContainerRef.current;
     const toggleList: string[] = [
       "close",
       "col-xl-2",
@@ -30,14 +28,7 @@ function SideNavbar() {
       toggleList.map((item: string) => {
         navbar.classList.toggle(item);
       });
-
-    const nav = mainNavRef.current;
-    if (nav) {
-      nav.classList.toggle("hidden");
-      nav.classList.toggle("d-none");
-    }
-    const closedNav = closedNavRef.current;
-    if (closedNav) closedNav.classList.toggle("hidden");
+    setNavClosed(!navClosed);
   };
 
   const goHome = () => {
@@ -50,21 +41,18 @@ function SideNavbar() {
       className="bg-light navbar-light d-flex flex-column
       align-items-center px-1 py-5 col-sm-1 col-2 close"
       style={{ zIndex: 10 }}
-      ref={navbarRef}
+      ref={navbarContainerRef}
     >
       <TogglerIcon navbarToggle={navbarToggle} />
-      <div className="navbar-logo d-flex align-items-center justify-content-center" onClick={goHome}>
+      <button
+        type="button"
+        className="btn navbar-logo d-flex align-items-center justify-content-center"
+        onClick={goHome}
+      >
         <BiWorld />
-        <span className="mb-0 mx-1">
-          ALFAROUQ
-        </span>
-      </div>
-      <MainNav
-        ref={mainNavRef}
-        hiddenClass="hidden d-none"
-        navbarToggle={navbarToggle}
-      />
-      <ClosedNav ref={closedNavRef} />
+        <span className="mb-0 mx-1">ALFAROUQ</span>
+      </button>
+      <MainNavItems navClosed={navClosed} navbarToggle={navbarToggle} />
     </nav>
   );
 }
