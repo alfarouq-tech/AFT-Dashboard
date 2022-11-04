@@ -6,18 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Redux
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import { PersistGate } from "redux-persist/integration/react";
-// import { persistedStore } from "./redux/store";
 // App.jsx
 import App from "./App";
-
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <PersistGate persistor={persistedStore}> */}
-        <App />
-      {/* </PersistGate> */}
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
@@ -28,11 +23,18 @@ ReactDOM.render(
     => Pages
       // Dashboard
       // Projects
+      // Project (Has more details that you can edit)
+      // Teams
+      // Employees
+      // Employee (Has more details)
       // Our Clients
       // Client
       // Profile
+      // Settings
       // 404 Page
-      // Log In
+      // Sign In
+      // Sign Up
+      // Reset Password
 
     => Reusable Components
         * Header
@@ -42,6 +44,7 @@ ReactDOM.render(
         * Side Navbar
         * BaseProjectsTable
         * BaseEmployeesTable
+        * BaseAddForm
         * Footer
     ------------------------------------------------------------------------------------
       // Dashboard Page ===> Done
@@ -67,9 +70,9 @@ ReactDOM.render(
               >>> Status
               >>> Action
                 --> Delete Or Change Details
-          ** Table Of Current Projects
+          ** Table Of ongoing Projects
               >>> Project Name
-              >>> Budget
+              >>> Project Manager
               >>> Team
               >>> Deadline
               >>> Action
@@ -77,15 +80,26 @@ ReactDOM.render(
     ------------------------------------------------------------------------------------
       // Projects Page
         * Table Of All Projects
-          >>> Project Name
-          >>> Client Name
+          >>> Project Title
+          >>> Project Manager
           >>> Budget
           >>> Team
           >>> DeadLine
           >>> Status
           >>> Action
-            --> Delete Or Change Details
+            --> Delete, Change Details, or Open project page
         * Add New
+    ------------------------------------------------------------------------------------
+      // Project Page
+        --- All Details has a pen icon for editing
+        >>> Project Title
+        >>> Project Manager
+        >>> Client Name
+        >>> Budget
+        >>> Team
+        >>> Project Designs
+        >>> DeadLine
+        >>> Status
     ------------------------------------------------------------------------------------
       // Employees Page
        ** Table Of Employees
@@ -99,12 +113,31 @@ ReactDOM.render(
             --> Delete Or Change Details
           >>> Add More Button
             --> Form
-              /* Name
-              /* Position
-              /* Age
-              /* Start Date
-              /* Salary
-              /* Status
+              >>> Image
+              >>> Name
+              >>> Position
+              >>> Location
+              >>> Email
+              >>> Phone Number
+              >>> Age
+              >>> Start Date
+              >>> Salary
+              >>> Status
+              >>> Action
+      ------------------------------------------------------------------------------------
+        // Employee Page
+          --- All Details has a pen icon for editing
+          >>> Image
+          >>> Name
+          >>> Position
+          >>> Location
+          >>> Email
+          >>> Phone Number
+          >>> Age
+          >>> Start Date
+          >>> Salary
+          >>> Status
+          >>> Action
       ------------------------------------------------------------------------------------
       // Our Clients Page
         * Table
@@ -116,47 +149,28 @@ ReactDOM.render(
         * Add New
       ------------------------------------------------------------------------------------
       // Client Page
-        * Table
-          >>> Client Name
-          >>> Email
-          >>> Phone Number
-          >>> Num Of Projects
-          >>> Paid Money
-          >>> Verified
-          >>> Indebtedness
-        * Update Info
-           --> Form
-              /* Client Name
-              /* Email
-              /* Phone Number
-              /* Num Of Projects
-              /* Paid Money
-              /* Verified
-              /* Indebtedness
+        >>> Client Name
+        >>> Email
+        >>> Phone Number
+        >>> Num Of Projects
+        >>> Paid Money
+        >>> Verified
+        >>> Indebtedness
       ------------------------------------------------------------------------------------
-      // Profile Page // For Employees
+      // Profile Page // For the user
         * Details Form
           >>> Image
           >>> User Name
           >>> Email
           >>> Phone Number
-          >>> Bank Card Number For Money Transfers
-          >>> Country
-          >>> City
-          >>> Street Address
-          >>> Postal Code
-        * Side Card // Not Editable
-          >>> Image
-          >>> Position
-          >>> Num Of Projects
-          >>> Salary
-          >>> Start Date
-          >>> Status --> Full Time
+          >>> To do list
       ------------------------------------------------------------------------------------
       // 404 Page
-        * 404 Page Is Not Found With  Electric Effect & Clip Property
+        * 404 Page Is Not Found image
+        * "There's nothing here!"
+        * A link to the dashboard page
       ------------------------------------------------------------------------------------
-      // Log In Pages
+      // Sign In Pages
         * Form
           >>> Name
           >>> Password

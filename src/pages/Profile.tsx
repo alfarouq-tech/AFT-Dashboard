@@ -1,9 +1,8 @@
 import React from 'react';
+import BaseUnderConstruction from '../components/BaseUnderConstruction';
 
 const Profile = () => (
-  <div>
-    Profile
-  </div>
+  <BaseUnderConstruction pageName="Profile" />
 );
 
 export default Profile;

@@ -46,7 +46,7 @@ function SideNavbar() {
       <TogglerIcon navbarToggle={navbarToggle} />
       <button
         type="button"
-        className="btn navbar-logo d-flex align-items-center justify-content-center"
+        className="btn navbar-logo position-fixed d-flex align-items-center justify-content-center"
         onClick={goHome}
       >
         <BiWorld />

@@ -17,8 +17,8 @@ nav .navbar-toggler {
 nav .close-icon {
   padding: 0;
   position: absolute;
-  right: 30px;
-  top: 13px;
+  right: -107px;
+  top: -34px;
   font-size: 22px;
   color: rgb(202, 199, 199);
 }
@@ -90,7 +90,7 @@ nav.close .navbar-toggler {
 }
 
 nav.close .close-icon {
-  transition: 0.5s;
+  transition: 0.2s;
   opacity: 0;
 }
 

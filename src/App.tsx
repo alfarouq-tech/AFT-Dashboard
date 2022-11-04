@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Components
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Loading from "./components/Loading";
+import NotFound from "./components/NotFound";
 // Pages
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
@@ -30,7 +31,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    setAuth(() => user ? true : false);
+    setAuth(() => (user ? true : false));
   }, [user]);
 
   if (loading) {
@@ -46,14 +47,7 @@ const App = () => {
           <Route path="our-clients" element={<OurClients />} />
           <Route path="employees" element={<Employees />} />
           <Route path="profile" element={<Profile />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
+          <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="/sign-in" element={<SignIn auth={auth} />} />
         <Route path="/sign-up" element={<SignUp auth={auth} />} />

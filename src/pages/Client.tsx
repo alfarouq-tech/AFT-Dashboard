@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
+import BaseUnderConstruction from '../components/BaseUnderConstruction';
 
-function Client() {
-  return (
-    <div>Client</div>
-  )
-};
+const Client = () => (
+  <BaseUnderConstruction pageName="Client Details" />
+);
 
 export default Client;

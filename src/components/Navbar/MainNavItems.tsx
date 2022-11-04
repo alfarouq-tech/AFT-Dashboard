@@ -9,6 +9,7 @@ import { AiFillDashboard, AiFillProject } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { BiLogOut } from "react-icons/bi";
+import { IoPeopleCircleSharp } from "react-icons/io5";
 
 interface Item {
   name: string;
@@ -32,7 +33,7 @@ const MainNavItems = React.memo(
       {
         name: "Employees",
         url: "/employees",
-        icon: <AiFillDashboard />,
+        icon: <IoPeopleCircleSharp />,
       },
       {
         name: "Our Clients",

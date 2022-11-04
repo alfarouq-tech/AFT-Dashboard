@@ -7,7 +7,7 @@ interface Props {
 
 function TogglerIcon({ navbarToggle }: Props) {
   return (
-    <>
+    <div className="position-fixed">
       <button
         className="btn navbar-toggler"
         onClick={navbarToggle}
@@ -20,7 +20,7 @@ function TogglerIcon({ navbarToggle }: Props) {
       >
         <AiFillCloseCircle />
       </button>
-    </>
+    </div>
   );
 }
 
